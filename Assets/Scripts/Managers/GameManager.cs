@@ -23,11 +23,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
         {
-            // if (PhotonNetwork.PlayerList[i].NickName != PhotonNetwork.LocalPlayer.NickName)
-            // {
-            //     Instantiate(_playerPrefab, _playerPositions[i]);
-            // }
-            Instantiate(_playerPrefab, _playerPositions[i]);
+            if (PhotonNetwork.PlayerList[i].NickName != PhotonNetwork.LocalPlayer.NickName)
+            {
+                Instantiate(_playerPrefab, _playerPositions[i]);
+            }
         }
     }
 }
