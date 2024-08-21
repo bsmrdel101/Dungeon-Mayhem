@@ -29,7 +29,6 @@ public class DebugManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.Log(PhotonNetwork.PlayerList.Length);
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
         {
             PhotonNetwork.PlayerList[i].NickName = $"Player {i}";
