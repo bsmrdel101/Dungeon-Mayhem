@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviourPunCallbacks
@@ -33,7 +34,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < playerlist.Count; i++)
         {
-            Instantiate(_playerPrefab, _playerPositions[i]);
+            GameObject playerObj = Instantiate(_playerPrefab, _playerPositions[i]);
+            
+            // TODO: Get the playerName text component from the playerObj
+            // And set the playerName text equal to PhotonNetwork NickName
+
         }
     }
 }
