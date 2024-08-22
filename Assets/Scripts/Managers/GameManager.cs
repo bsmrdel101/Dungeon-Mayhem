@@ -35,10 +35,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         for (int i = 0; i < playerlist.Count; i++)
         {
             GameObject playerObj = Instantiate(_playerPrefab, _playerPositions[i]);
-            
-            // TODO: Get the playerName text component from the playerObj
-            // And set the playerName text equal to PhotonNetwork NickName
-
+            playerObj.GetComponentInChildren<TextMeshProUGUI>().text = playerlist[i].NickName;
         }
     }
 }
