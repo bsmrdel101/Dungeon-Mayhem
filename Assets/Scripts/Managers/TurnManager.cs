@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
-using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
@@ -25,10 +24,6 @@ public class TurnManager : MonoBehaviourPunCallbacks
     private void HandleTurn()
     {
         _playerName.text = _playerList[_currentTurn].NickName;
-
-        // Can end turn
-
-        // Move currentTurn value
     }
 
     public void OnClick_EndTurn()
@@ -38,5 +33,6 @@ public class TurnManager : MonoBehaviourPunCallbacks
         {
             _currentTurn = 0;
         }
+        HandleTurn();
     }
 }

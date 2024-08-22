@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         List<Player> playerlist = new List<Player>();
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
         {
-            if (PhotonNetwork.PlayerList[i].NickName != PhotonNetwork.LocalPlayer.NickName){
+            if (PhotonNetwork.PlayerList[i].UserId != PhotonNetwork.LocalPlayer.UserId){
                 playerlist.Add(PhotonNetwork.PlayerList[i]);
             }
         }
